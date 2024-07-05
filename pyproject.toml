@@ -1,0 +1,58 @@
+[project]
+name = "voice-adapter"
+version = "0.0.1"
+description = "Voice Adapter"
+authors = []
+readme = "README.md"
+license = { file = "LICENSE" }
+
+dependencies = [
+    "torch>=2.2.0",
+    "snac>=1.2.0",
+    "transformers>=4.38.0",
+    "huggingface_hub>=0.21.0",
+    "habana_frameworks",
+    "soundfile>=0.10.0",
+    "tqdm>=4.66.0",
+    "bitsandbytes==0.42.0",
+    "sentencepiece>=0.2.0",
+    "tokenizers>=0.15.2",
+    "numpy<2.0.0",
+    "pandas>=1.9.0",
+    "tensorboard>=2.14.0",
+    "wandb>=0.12.0",
+    "datasets>=2.18.0",
+    "safetensors>=0.4.3",
+]
+
+[project.urls]
+homepage = "https://github.com/julien-blanchon/voice-adapter"
+documentation = "https://github.com/julien-blanchon/voice-adapter/tutorials"
+
+[project.scripts]
+voice-adapter = "voice-adapter.__main__:main"
+
+[project.optional-dependencies]
+all = [
+    
+]
+
+[build-system]
+requires = [
+    "setuptools>=68.2.2",
+    "wheel>=0.41.2",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = [
+    "voice-adapter",
+    "voice-adapter.*",
+]
+exclude = []
+
+[tool.setuptools.package-data]
+voice-adapter = [
+    "LICENSE",
+    "README.md",
+]
